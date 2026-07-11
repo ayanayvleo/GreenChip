@@ -1,36 +1,21 @@
-﻿# FPGA build outputs
-build/*
-!build/**/
-!build/**/.gitkeep
-
 # Vivado generated files
+build/
 *.jou
 *.log
 *.str
-*.zip
-*.xpr
-*.runs
-*.cache
-*.hw
-*.ip_user_files
-.Xil/
-
-# Simulation outputs
+*.pb
+*.dcp
+*.bit
+*.bin
+*.ltx
 *.vcd
-*.fst
-*.wdb
-*.vvp
-*.out
+.Xil/
+*.cache/
+*.runs/
+*.sim/
+*.hw/
+*.ip_user_files/
 
 # Temporary files
 *.tmp
-*.temp
 *.bak
-*~
-
-# VS Code local settings
-.vscode/
-
-# Operating system files
-Thumbs.db
-.DS_Store
