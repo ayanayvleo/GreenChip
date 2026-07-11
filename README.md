@@ -1,84 +1,175 @@
 # 🌿 GreenChip
 
-> **Energy-Aware FPGA Architecture**  
-> A modular SystemVerilog FPGA design focused on intelligent power management, hardware monitoring, and sustainable embedded computing.
+> **Energy-Aware FPGA Architecture for Sustainable Embedded Systems**
+
+![SystemVerilog](https://img.shields.io/badge/SystemVerilog-HDL-blue)
+![Vivado](https://img.shields.io/badge/Vivado-2026.1-orange)
+![FPGA](https://img.shields.io/badge/FPGA-Artix--7-success)
+![Status](https://img.shields.io/badge/Status-Bitstream_Generated-brightgreen)
+
+---
 
 <p align="center">
 
-![RTL Schematic](images/greenchip-rtl-schematic.png)
+# Building Smarter, More Sustainable Hardware
+
+*A modular FPGA architecture designed to explore intelligent power management through dedicated digital logic.*
 
 </p>
 
 ---
 
-## Overview
+<p align="center">
+<img src="images/greenchip-rtl-schematic.png" width="600">
+</p>
 
-GreenChip is a SystemVerilog-based FPGA architecture designed to explore intelligent power management through dedicated hardware logic rather than software alone.
+---
 
-The project integrates multiple hardware modules that work together to monitor activity, temperature, communication interfaces, and system power while providing a scalable foundation for future sustainable computing research.
+# Overview
+
+GreenChip is a research-focused FPGA architecture designed in **SystemVerilog** to demonstrate how dedicated digital hardware can monitor and respond to system activity, communication, and environmental conditions in real time.
+
+Rather than relying solely on software for system management, GreenChip explores a hardware-first approach by integrating sensing, communication, monitoring, and power management directly into programmable logic.
+
+The project was designed, verified, synthesized, implemented, and compiled into a hardware-ready FPGA bitstream using **AMD Vivado 2026.1**.
+
+---
+
+# Architecture
+
+GreenChip is built from modular hardware components that communicate through a centralized control architecture.
+
+### Core Modules
+
+- UART Transmitter
+- UART Receiver
+- SPI Master
+- Temperature Sensor
+- Activity Monitor
+- Power Controller
+- State Machine
+- Clock Divider
+- PWM Fan Controller
+- Energy Counter
+- LED Controller
 
 ---
 
 # FPGA Implementation
 
 <p align="center">
-
-![FPGA Floorplan](images/greenchip-fpga-floorplan.png)
-
+<img src="images/greenchip-fpga-floorplan.png" width="350">
 </p>
 
-The completed design was successfully synthesized, implemented, and mapped onto an AMD Artix-7 FPGA architecture using AMD Vivado 2026.1.
+After RTL verification, the complete design successfully passed:
+
+- ✅ RTL Simulation
+- ✅ Functional Verification
+- ✅ Vivado Synthesis
+- ✅ Placement
+- ✅ Routing
+- ✅ Timing Analysis
+- ✅ Bitstream Generation
+
+The floorplan above shows the physical placement of GreenChip within the AMD Artix-7 FPGA fabric after implementation.
 
 ---
 
-## Features
-
-- Modular SystemVerilog RTL architecture
-- UART communication
-- SPI Master interface
-- Temperature monitoring
-- Activity monitoring
-- PWM fan controller
-- LED controller
-- Energy counter
-- Power controller
-- Central state machine
-
----
-
-## Design Flow
+# Development Flow
 
 ```text
 Research
-   ↓
-Architecture
-   ↓
-RTL Design
-   ↓
-Simulation
-   ↓
-Synthesis ✅
-   ↓
-Implementation ✅
-   ↓
-Bitstream Generation ✅
+      │
+      ▼
+Architecture Design
+      │
+      ▼
+SystemVerilog RTL
+      │
+      ▼
+Module Verification
+      │
+      ▼
+Integration Testing
+      │
+      ▼
+Vivado Synthesis
+      │
+      ▼
+Implementation
+      │
+      ▼
+Timing Analysis
+      │
+      ▼
+Bitstream Generation
 ```
 
 ---
 
-## Project Status
+# Engineering Summary
 
-| Stage | Status |
-|--------|--------|
-| RTL Design | ✅ Complete |
-| Testbench Verification | ✅ Complete |
+| Category | Result |
+|-----------|--------|
+| HDL | SystemVerilog |
+| FPGA Family | AMD Artix-7 |
+| Design Environment | AMD Vivado 2026.1 |
+| RTL Modules | 20 |
+| Internal Nets | 94 |
+| I/O Ports | 30 |
+| RTL Simulation | ✅ Passed |
 | Synthesis | ✅ Passed |
 | Implementation | ✅ Passed |
-| Bitstream Generation | ✅ Complete |
+| Timing | ✅ Passed |
+| Bitstream | ✅ Generated |
 
 ---
 
-## Technologies
+# Verification
+
+Every major subsystem was verified independently before full system integration.
+
+| Component | Status |
+|-----------|--------|
+| UART | ✅ Pass |
+| SPI | ✅ Pass |
+| Power Controller | ✅ Pass |
+| GreenChip Integration | ✅ Pass |
+
+---
+
+# Repository Structure
+
+```text
+GreenChip
+│
+├── constraints/
+├── docs/
+├── images/
+│   ├── greenchip-rtl-schematic.png
+│   └── greenchip-fpga-floorplan.png
+│
+├── rtl/
+│   ├── activity_monitor.sv
+│   ├── clock_divider.sv
+│   ├── energy_counter.sv
+│   ├── fan_pwm.sv
+│   ├── greenchip_top.sv
+│   ├── led_controller.sv
+│   ├── power_controller.sv
+│   ├── spi_master.sv
+│   ├── state_machine.sv
+│   ├── temperature_sensor.sv
+│   ├── uart_rx.sv
+│   └── uart_tx.sv
+│
+├── tb/
+└── README.md
+```
+
+---
+
+# Technology Stack
 
 - SystemVerilog
 - AMD Vivado 2026.1
@@ -89,37 +180,48 @@ Bitstream Generation ✅
 
 ---
 
-## Repository Structure
+# Current Status
 
-```text
-GreenChip
-│
-├── rtl/
-├── tb/
-├── constraints/
-├── docs/
-├── images/
-│   ├── greenchip-rtl-schematic.png
-│   └── greenchip-fpga-floorplan.png
-└── README.md
-```
+🟢 RTL Complete
+
+🟢 Verification Complete
+
+🟢 Synthesis Complete
+
+🟢 FPGA Implementation Complete
+
+🟢 Timing Closure Achieved
+
+🟢 Bitstream Successfully Generated
 
 ---
 
-## Future Work
+# Future Roadmap
 
-- Hardware validation on an Artix-7 FPGA
-- Live sensor integration
-- Real-time power monitoring
-- AI-assisted energy optimization
+- Hardware validation on a physical AMD Artix-7 FPGA
+- Live temperature sensor integration
+- External power monitoring
+- Dynamic power optimization
+- AI-assisted hardware control
 - Expanded peripheral support
 
 ---
 
-## Author
+# Author
 
-**A'Yana Leonard**
+## A'Yana Leonard
 
 Electrical & Computer Engineering Research
 
-*Building sustainable hardware solutions through FPGA design and digital systems engineering.*
+**Interests**
+
+- FPGA Design
+- Digital Systems
+- Sustainable Computing
+- Embedded Systems
+- Hardware Architecture
+- Green Technology
+
+---
+
+> *GreenChip represents an exploration into how programmable hardware can contribute to more intelligent and energy-aware embedded systems.*
